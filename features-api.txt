@@ -1,0 +1,13 @@
+Endpoints
+
+    /api
+        /register {username, password, name, contact-no, email, occupation} - {}
+        /login {username, password} - {token}
+        /logout {token} - {}
+        /validate {token}
+        /upload {token, moduleName, file} - {}
+        /download {token, moduleName} - {}
+        /remove {token, file} - {}
+        /rename {token, moduleName, newModuleName} - {}
+
+        /user/ {token} {}
