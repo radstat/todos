@@ -1,13 +1,41 @@
 Endpoints
 
     /api
-        /register {username, password, name, contact-no, email, occupation} - {}
-        /login {username, password} - {token}
-        /logout {token} - {}
-        /validate {token}
-        /upload {token, moduleName, file} - {}
-        /download {token, moduleName} - {}
-        /remove {token, file} - {}
-        /rename {token, moduleName, newModuleName} - {}
+        /register
+            {name, username, password, email, contact, work}
+                {token}
+                {error: 'username'} (Username already taken)
 
-        /user/ {token} {}
+        /login
+            {username, password}
+                {token}
+                {error: 'username'} (Username not registered)
+                {error: 'password'} (Incorrect password)
+
+        /logout
+            {token}
+                {}
+
+        /validate
+            {token}
+                {validity}
+
+        /upload
+            {token, moduleName, file}
+                {success}
+
+        /download
+            {token, moduleName}
+                {file}
+
+        /rename
+            {token, oldModuleName, newModuleName}
+                {success}
+
+        /remove
+            {token, moduleName}
+                {file}
+
+        /user
+            {token}
+                {user}
