@@ -14,28 +14,18 @@ Endpoints
 
         /logout
             {token}
-                {}
+                {success}
 
         /validate
             {token}
-                {validity}
+                {success}
 
         /upload
             {token, moduleName, file}
                 {success}
-
-        /download
-            {token, moduleName}
-                {file}
-
-        /rename
-            {token, oldModuleName, newModuleName}
-                {success}
-
-        /remove
-            {token, moduleName}
-                {file}
+                {error: 'token'} (Token has expired)
 
         /user
             {token}
                 {user}
+                {error: 'token'} (Token has expired)
